@@ -29,7 +29,7 @@ function App() {
   useEffect(() => {
     axios.get(mentorURL).then((response) => {
       setMentor(response.data);
-    });
+    },{ withCredentials: true, credentials: 'include' });
   }, []);
   if (!mentor) return null;
 

@@ -17,7 +17,7 @@ const Login = () => {
         const response = await axios.post(
           "http://localhost:3001/api/auth/login",
           values,
-          { withCredentials: true }
+          { withCredentials: true, credentials: 'include' }
         );
         const token = Cookies.get('token')     
         window.localStorage.setItem("user", JSON.stringify({email: values.email, token: token}));
